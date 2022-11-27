@@ -1,17 +1,16 @@
-from PyQt5 import uic
 from PyQt5.QtGui import QColor, QPainter
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import sys
 import random
-
+from UI import Ui_MainWindow
 
 SCREEN_SIZE = [680, 480]
 
 
-class Example(QMainWindow):
+class Example(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('ui.ui', self)
+        self.setupUi(self)
         self.flag = False
         self.pushButton.clicked.connect(self.draw)
         self.coords = []
